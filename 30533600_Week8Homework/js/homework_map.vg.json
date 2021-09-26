@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Mean Water pH Levels in Certain Countries In Europe",
-    "width": 500,
-    "height": 500,
+    "title": "Mean Water pH Levels per 100000 Mean of Tourists in Certain Countries",
+    "width": 800,
+    "height": 600,
     "data": {
       "url": "https://raw.githubusercontent.com/dkee0004/fit3179/main/30533600_Week8Homework/js/ne_110m_admin_0_countries.topojson",
       "format": {
@@ -17,9 +17,10 @@
             "url": "https://raw.githubusercontent.com/dkee0004/fit3179/main/30533600_Week8Homework/data/waterPollutionCleaned.csv"
           },
           "key": "Country",
-          "fields": ["resultMeanValue"]
+          "fields": ["resultMeanValue", "TouristMean_1990_2020"]
         }
-      }
+      },
+      {"calculate": "datum.resultMeanValue/datum.TouristMean_1990_2020 * 100000", "as": "Mean Water pH Levels per 100000 Mean of Tourists"}
     ],
     "projection": {
       "type": "equirectangular"
@@ -29,13 +30,14 @@
       },
     "encoding": {
       "color": {
-        "field": "resultMeanValue",
+        "field": "Mean Water pH Levels per 100000 Mean of Tourists",
         "type": "quantitative",
         "scale": {"type": "log"}
       },
       "tooltip": [
         {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-        {"field": "resultMeanValue", "type": "quantitative"}
+        {"field": "resultMeanValue", "type": "quantitative"},
+        {"field": "Mean Water pH Levels per 100000 Mean of Tourists", "type": "quantitative", "format": ".2f"}
       ]
     }
   
