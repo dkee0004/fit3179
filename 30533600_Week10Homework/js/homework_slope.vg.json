@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "https://raw.githubusercontent.com/dkee0004/fit3179/main/30533600_Week10Homework/data/waterPollutionCleaned2.csv"},
+  "description": "Slope graph showing the median of mean pH values in France, Spain and Sweden from 2008 to 2009.",
+  "mark": "line",
+  "width": {"step": 50},
+  "encoding": {
+    "x": {
+      "field": "phenomenonTimeReferenceYear",
+      "type": "ordinal",
+      "scale": {"padding": 0.5}
+    },
+    "y": {
+      "aggregate": "median",
+      "field": "resultMeanValue",
+      "type": "quantitative"
+    },
+    "color": {"field": "Country", "type": "nominal"}
+  }
+}
