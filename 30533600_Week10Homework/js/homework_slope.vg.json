@@ -15,8 +15,6 @@
       "field": "resultMeanValue",
       "type": "quantitative"
     },
-    "color": {"field": "Country", "type": "nominal"},
-    "width": 100,
-    "height": 500
+    "color": {"field": "Country", "type": "nominal"}
   }
 }
