@@ -1,6 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Mean Water pH Levels per 100000 Mean of Tourists in Certain Countries",
+    "width": "container",
     "data": {
       "url": "https://raw.githubusercontent.com/dkee0004/fit3179/main/30533600_Week8Homework/js/ne_110m_admin_0_countries.topojson",
       "format": {
