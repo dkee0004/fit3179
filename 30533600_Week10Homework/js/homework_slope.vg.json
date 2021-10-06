@@ -14,7 +14,7 @@
       "aggregate": "median",
       "field": "resultMeanValue",
       "type": "quantitative",
-      "scale": {"range": [6, 8]}
+      "scale": {"domain": [6, 8]}
     },
     "color": {"field": "Country", "type": "nominal"}
   }
