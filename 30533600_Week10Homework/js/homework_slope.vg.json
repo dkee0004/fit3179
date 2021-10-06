@@ -13,10 +13,9 @@
     "y": {
       "aggregate": "median",
       "field": "resultMeanValue",
-      "type": "quantitative"
+      "type": "quantitative",
+      "scale": {"range": [6, 8]}
     },
-    "color": {"field": "Country", "type": "nominal"},
-    "width": 200,
-    "height": 1000
+    "color": {"field": "Country", "type": "nominal"}
   }
 }
