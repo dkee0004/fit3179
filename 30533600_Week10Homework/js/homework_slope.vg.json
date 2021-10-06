@@ -13,7 +13,8 @@
     "y": {
       "aggregate": "median",
       "field": "resultMeanValue",
-      "type": "quantitative"
+      "type": "quantitative",
+      "scale": {"domain": [6, 8]}
     },
     "color": {"field": "Country", "type": "nominal"}
   }
