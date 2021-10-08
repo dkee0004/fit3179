@@ -19,7 +19,7 @@
   },
   "layer": [
     {
-      "mark": {"type": "line"}
+      "mark": {"type": "line", "tooltip": "encoding"}
     },
     {
       "mark": {
