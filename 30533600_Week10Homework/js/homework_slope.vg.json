@@ -3,33 +3,33 @@
   "data": {"url": "https://raw.githubusercontent.com/dkee0004/fit3179/main/30533600_Week10Homework/data/waterPollutionCleaned2.csv"},
   "title": "Slope graph showing the median of mean pH values in France, Spain and Sweden from 2008 to 2009.",
   "width": "container",
-  "select": {
-    "country_highlight": {
-      "type": "multi",
-      "fields": ["Country"],
-      "bind": "legend"
-    }
-  },
-  "encoding": {
-    "x": {
-      "field": "phenomenonTimeReferenceYear",
-      "type": "ordinal",
-      "scale": {"padding": 1.0}
-    },
-    "y": {
-      "aggregate": "median",
-      "field": "resultMeanValue",
-      "type": "quantitative",
-      "scale": {"domain": [6, 8]}
-    },
-    "color": {"field": "Country", "type": "nominal"}
-  },
   "layer": [
     {
-      "mark": {"type": "line", "tooltip": "encoding"},
+      "selection": {
+        "country_highlight": {
+        "type": "multi",
+        "fields": ["Country"],
+        "bind": "legend"
+        }
+      },
+      "mark": {"type": "line", "tooltip": true},
       "opacity": {
         "condition": {"select": "country_highlight", "value": 0.6},
         "value": 0.2
+      },
+      "encoding": {
+        "x": {
+          "field": "phenomenonTimeReferenceYear",
+          "type": "ordinal",
+          "scale": {"padding": 1.0}
+        },
+        "y": {
+          "aggregate": "median",
+          "field": "resultMeanValue",
+          "type": "quantitative",
+          "scale": {"domain": [6, 8]}
+        },
+        "color": {"field": "Country", "type": "nominal"}
       }
     },
     {
@@ -37,13 +37,31 @@
         "type": "text",
         "align": "right",
         "baseline": "middle",
-        "dx": -12,
+        "dx": 50,
         "fontSize": 11.5,
         "fontStyle": "italic"
       },
       "encoding": {
+        "x": {
+          "field": "phenomenonTimeReferenceYear",
+          "type": "ordinal",
+          "scale": {"padding": 1.0}
+        },
+        "y": {
+          "aggregate": "median",
+          "field": "resultMeanValue",
+          "type": "quantitative",
+          "scale": {"domain": [6, 8]}
+        },
         "text": {"field": "Country", "type": "nominal"},
-        "color": {"value": "black"}
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['phenomenonTimeReferenceYear'] == '2009'",
+            "value": 1
+          },
+          "value": 0
+        }
       }
     }
   ]
