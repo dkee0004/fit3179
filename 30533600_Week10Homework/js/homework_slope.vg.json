@@ -2,7 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {"url": "https://raw.githubusercontent.com/dkee0004/fit3179/main/30533600_Week10Homework/data/waterPollutionCleaned2.csv"},
   "title": "Slope graph showing the median of mean pH values in France, Spain and Sweden from 2008 to 2009.",
-  "mark": "line",
   "width": "container",
   "encoding": {
     "x": {
@@ -16,26 +15,26 @@
       "type": "quantitative",
       "scale": {"domain": [6, 8]}
     },
-    "color": {"field": "Country", "type": "nominal"},
-    "tooltip": [
-      {"field": "Country", "type": "nominal"},
-      {"field": "PopulationDensity", "type": "quantitative", "format": ".2f"},
-      {"field": "TouristMean_1990_2020", "type": "quantitative", "format": ","}
-    ]
+    "color": {"field": "Country", "type": "nominal"}
   },
-  "layer": {
-    "mark": {
-      "type": "text",
-      "align": "right",
-      "baseline": "middle",
-      "dx": -12,
-      "fontSize": 11.5,
-      "fontStyle": "italic"
+  "layer": [
+    {
+      "mark": {"type": "line", "tooltip": true}
     },
-    "encoding": {
-      "text": {"field": "Country", "type": "nominal"},
-      "color": {"value": "black"}
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Country", "type": "nominal"},
+        "color": {"value": "black"}
+      }
     }
-  }
+  ]
 
 }
