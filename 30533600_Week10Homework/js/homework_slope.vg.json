@@ -16,6 +16,26 @@
       "type": "quantitative",
       "scale": {"domain": [6, 8]}
     },
-    "color": {"field": "Country", "type": "nominal"}
+    "color": {"field": "Country", "type": "nominal"},
+    "tooltip": [
+      {"field": "Country", "type": "nominal"},
+      {"field": "PopulationDensity", "type": "quantitative", "format": ".2f"},
+      {"field": "TouristMean_1990_2020", "type": "quantitative", "format": ","}
+    ]
+  },
+  "layer": {
+    "mark": {
+      "type": "text",
+      "align": "right",
+      "baseline": "middle",
+      "dx": -12,
+      "fontSize": 11.5,
+      "fontStyle": "italic"
+    },
+    "encoding": {
+      "text": {"field": "Country", "type": "nominal"},
+      "color": {"value": "black"}
+    }
   }
+
 }
