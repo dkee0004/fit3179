@@ -19,7 +19,7 @@
   },
   "layer": [
     {
-      "mark": {"type": "line", "tooltip": true}
+      "mark": {"type": "line"}
     },
     {
       "mark": {
