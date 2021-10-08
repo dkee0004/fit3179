@@ -5,18 +5,14 @@
   "width": "container",
   "layer": [
     {
-      "selection": {
-        "country_highlight": {
-        "type": "multi",
-        "fields": ["Country"],
-        "bind": "legend"
+      "params": [
+        {
+          "name": "country_highlight",
+          "select": {"type": "point", "fields": ["Country"]},
+          "bind": "legend"
         }
-      },
+      ],
       "mark": {"type": "line", "tooltip": true},
-      "opacity": {
-        "condition": {"select": "country_highlight", "value": 0.6},
-        "value": 0.2
-      },
       "encoding": {
         "x": {
           "field": "phenomenonTimeReferenceYear",
@@ -29,7 +25,11 @@
           "type": "quantitative",
           "scale": {"domain": [6, 8]}
         },
-        "color": {"field": "Country", "type": "nominal"}
+        "color": {"field": "Country", "type": "nominal"},
+        "opacity": {
+          "condition": {"param": "country_highlight", "value": 0.6},
+          "value": 0.2
+        }
       }
     },
     {
