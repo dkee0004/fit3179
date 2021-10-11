@@ -25,8 +25,8 @@
    <!-- pure grid group -->
     <div class="pure-g">
       <div class="pure-u-1-1">
-        <h1>Water Pollution</h1>
-        <p>Water Pollution in Europe</p>
+        <h1>Water Pollution in Europe</h1>
+        <p>A visualization to observe any kind of relationship between water pollution in Europe and the tourists in it.</p>
       </div>
     </div>
   <!-- end pure grid group -->
@@ -60,21 +60,37 @@
     </div>
     <!-- end pure grid group -->
   
+  <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description description-left">
+            <h2>Scatterplot</h2>
+            <p>An overview of the water pollution using a map.</p>
+          </div>
+        </div>
+        <div class="pure-u-2-3">
+          <div id="vis3" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+  
 
   </div> <!-- end page -->
 
 <script type="text/javascript">
   
-  var spec2 = "30533600_Week8Homework/js/homework_map.vg.json";
-  vegaEmbed('#vis1', spec2).then(function(result) {
+  var spec = "30533600_Week8Homework/js/homework_map.vg.json";
+  vegaEmbed('#vis1', spec).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
-</script>
-  
-<script type="text/javascript">
 
-  var spec = "30533600_Week10Homework/js/homework_slope.vg.json";
-  vegaEmbed('#vis2', spec).then(function(result) {
+  var spec2 = "30533600_Week10Homework/js/homework_slope.vg.json";
+  vegaEmbed('#vis2', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var spec3 = "30533600_ThirdVis/js/scatterplot.vg.json";
+  vegaEmbed('#vis3', spec3).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
