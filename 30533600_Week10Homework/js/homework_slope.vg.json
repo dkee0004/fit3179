@@ -12,7 +12,7 @@
           "bind": "legend"
         }
       ],
-      "mark": {"type": "line", "tooltip": true},
+      "mark": {"type": "line"},
       "encoding": {
         "x": {
           "field": "phenomenonTimeReferenceYear",
@@ -29,7 +29,20 @@
         "opacity": {
           "condition": {"param": "country_highlight", "value": 0.6},
           "value": 0
-        }
+        },
+        "tooltip": [
+          {
+            "field": "phenomenonTimeReferenceYear",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          {
+            "aggregate": "median",
+            "field": "resultMeanValue",
+            "type": "quantitative",
+            "title": "Median of Mean pH Values"
+          }
+        ]
       }
     }
   ]
