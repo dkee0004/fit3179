@@ -17,13 +17,15 @@
         "x": {
           "field": "phenomenonTimeReferenceYear",
           "type": "ordinal",
-          "scale": {"padding": 1.0}
+          "scale": {"padding": 1.0},
+          "title": "Year"
         },
         "y": {
           "aggregate": "median",
           "field": "resultMeanValue",
           "type": "quantitative",
-          "scale": {"domain": [6, 8.5]}
+          "scale": {"domain": [6, 8.5]},
+          "title": "Median of Mean pH Value"
         },
         "color": {"field": "Country", "type": "nominal"},
         "opacity": {
@@ -40,7 +42,7 @@
             "aggregate": "median",
             "field": "resultMeanValue",
             "type": "quantitative",
-            "title": "Median of Mean pH Values"
+            "title": "Median of Mean pH Value"
           }
         ]
       }
