@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Correlation Between Population Density and Mean of Tourists in Countries in Europe",
-  "data": {"url": "https://raw.githubusercontent.com/dkee0004/fit3179/main/30533600_Week8Homework/data/waterPollutionCleaned.csv"},
+  "data": {"url": "https://raw.githubusercontent.com/dkee0004/fit3179/main/data/waterPollutionCleaned.csv"},
   "width": "container",
   "params": [
     {
