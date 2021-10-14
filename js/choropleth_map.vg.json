@@ -31,7 +31,7 @@
           "lookup": "properties.NAME",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/dkee0004/fit3179/main/30533600_Week8Homework/data/waterPollutionCleaned.csv"
+              "url": "https://raw.githubusercontent.com/dkee0004/fit3179/main/data/waterPollutionCleaned.csv"
             },
             "key": "Country",
             "fields": ["resultMeanValue", "TouristMean_1990_2020"]
