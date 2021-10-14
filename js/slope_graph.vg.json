@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": {"url": "https://raw.githubusercontent.com/dkee0004/fit3179/main/30533600_Week10Homework/data/waterPollutionCleaned3.csv"},
+  "data": {"url": "https://raw.githubusercontent.com/dkee0004/fit3179/main/data/waterPollutionCleaned2.csv"},
   "title": "Slope graph - median of mean pH values in certain countries in Europe from 2008 to 2009",
   "width": "container",
   "layer": [
