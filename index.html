@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+  
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+
+</head>
+<body>
+  
+<div class="page">
+
+   <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>Water Pollution in Europe</h1>
+        <p>A visualization to observe any kind of relationship between water pollution in Europe and the tourists in it.</p>
+      </div>
+    </div>
+  <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description description-left">
+            <h2>Choropleth Map</h2>
+            <p>An overview of the water pollution using a map. Some of the smaller countries may have a better reading of mean pH values for a body of water, but when the readings are normalized to mean pH values per 100000 tourists, it can be shown that it is actually worse off than the bigger countries.</p>
+          </div>
+        </div>
+        <div class="pure-u-2-3">
+          <div id="vis1" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-2-3">
+          <div id="vis2"  class="vis-container"></div>
+        </div>
+        <div class="pure-u-1-3">
+          <div class="description description-right">
+            <h2>Slope Graph</h2>
+            <p>A slope graph showing the changes in the median of pH values across bodies of water in countries in Europe between 2008 to 2009. Based on this visualization, although the changes to the pH values in a year are in the decimal points, a point 1 or point 2 change in the value is already considered drastic. Relating this to the other visualizations and the topic at hand, we can see how the population and the number of tourists within the country, along with their bad practices, can fluctuate water pollution levels. Click on one of the countries in the legend to filter out the rest from the graph.</p>
+          </div>
+        </div>
+      
+    </div>
+    <!-- end pure grid group -->
+  
+  <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description description-left">
+            <h2>Scatterplot</h2>
+            <p>We can determine using this visualization to see, between the population and the toursits of a country, whose action outweighs the other in terms of water pollution. We can conclude from this scatterplot that tourists from those countries with a higher tourist amount highly contributed to the water pollution problem, vice versa. Click on one of the countries in the legend to filter out the rest from the graph.</p>
+          </div>
+        </div>
+        <div class="pure-u-2-3">
+          <div id="vis3" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+  
+  <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p>This visualisation is created by <a href="https://github.com/dkee0004" target="_blank">Daniel Kee</a>. The datasource is <a href="https://www.kaggle.com/ozgurdogan646/water-quality-dataset" target="_blank">a water quality dataset on Kaggle</a>.</p>
+      </div>
+    </div>
+  
+
+  </div> <!-- end page -->
+
+<script type="text/javascript">
+  
+  var spec = "js/choropleth_map.vg.json";
+  vegaEmbed('#vis1', spec).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var spec2 = "js/slope_graph.vg.json";
+  vegaEmbed('#vis2', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var spec3 = "js/scatterplot.vg.json";
+  vegaEmbed('#vis3', spec3).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+</body>
+</html>
