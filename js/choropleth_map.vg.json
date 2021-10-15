@@ -9,8 +9,36 @@
             "feature": "ne_110m_admin_0_countries"
           }
     },
+    "params": [
+      {
+        "name": "zoom_level",
+        "value": 300,
+        "bind": {
+          "input": "range",
+          "min": 50,
+          "max": 300,
+          "step": 50,
+          "name": "Zoom"
+        }
+      },
+      {
+        "name": "to_centre",
+        "value": [10, 415],
+        "bind": {
+          "input": "select",
+          "options": [
+            [0, 0],
+            [10, 415]
+          ],
+          "labels": ["Center map", "Focus"],
+          "name": "Map Centre"
+        }
+      }
+    ],
     "projection": {
-      "type": "equirectangular"
+      "type": "equirectangular",
+      "center": {"expr": "to_centre"},
+      "scale": {"expr": "zoom_level"}
     },
     "layer": [
       {
@@ -47,7 +75,7 @@
             "field": "Mean Water pH Levels per 100000 Mean of Tourists",
             "type": "quantitative",
             "scale": {"type": "log"},
-            "title": "ph Levels per 100000 Mean Tourists"
+            "title": "ph Levels per 100000 Tourists"
           },
           "tooltip": [
             {"field": "properties.NAME", "type": "nominal", "title": "Country"},
