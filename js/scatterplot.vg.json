@@ -10,7 +10,7 @@
       "bind": "legend"
     }
   ],
-  "mark": "point",
+  "mark": {"type": "point", "filled": true, "size": 200},
   "encoding": {
     "x": {"field": "PopulationDensity", "type": "quantitative", "title": "Population Density"},
     "y": {"field": "TouristMean_1990_2020", "type": "quantitative", "title": "Mean of Tourists"},
